@@ -238,6 +238,8 @@ table1_tbl <- tibble(
   )
 )
 
+print(table1_tbl)
+
 table2_tbl <- tibble(
   algo = c("OLS regression", "Elastic Net", "Random Forest", "eXtreme Gradient Boosting"),
   original = c(ols_time, en_time, rf_time, xgb_time),
@@ -247,6 +249,6 @@ table2_tbl <- tibble(
 print(table2_tbl)
 #Answers
 
-## 1:
-## 2:
-## 3:
+## 1: The extreme gradient boosting benefitted most from parallelization because it is simple, the time decreased, and complex computation
+## 2: The biggest difference between the slowest and fastest model was the random forest as the slowest and the elastic net as the fastest probably because random forest requires more resources and time compared to elastic net 
+## 3:I would recommend extreme gradient boosting because it works well and benefits from parallelization with speed and predictive power and takes less time with paralellization
