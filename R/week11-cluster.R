@@ -221,7 +221,7 @@ make_it_pretty <- function (formatme) {
   return(formatme)
 }
 
-table1_tbl <- tibble(
+`Table 3` <- tibble(
   algo = c("regression","elastic net","random forests","xgboost"),
   cv_rqs = c(
     make_it_pretty(cv_m1),
@@ -237,15 +237,16 @@ table1_tbl <- tibble(
   )
 )
 
-print(table1_tbl)
 
-table2_tbl <- tibble(
+`Table 4`<- tibble(
   algo = c("OLS regression", "Elastic Net", "Random Forest", "eXtreme Gradient Boosting"),
-  original = c(ols_time, en_time, rf_time, xgb_time),
-  parallelized = c(ols_time_p, en_time_p, rf_time_p, xgb_time_p),
+  supercomputer = c(toc_OLS$callback_msg, toc_elastic$callback_msg, toc_random$callback_msg, toc_XGB$callback_msg),
+  supercomputer_n =  c(toc_OLS_Par$callback_msg, toc_elastic_Par$callback_msg, toc_random_Par$callback_msg, toc_XGB_Par$callback_msg) 
 )
 
-print(table2_tbl)
+colnames(`Table 4`) <- c("supercomputer", "supercomputer_#")
+
+write.csv(`Table 3`, "/out/table3.csv")
+write.csv(`Table 4`, "/out/table4.csv")
 
 #Answers
-
