@@ -235,13 +235,17 @@ make_it_pretty <- function (formatme) {
 
 `Table 4`<- tibble(
   algo = c("OLS regression", "Elastic Net", "Random Forest", "eXtreme Gradient Boosting"),
-  supercomputer = c(toc_OLS$callback_msg, toc_elastic$callback_msg, toc_random$callback_msg, toc_XGB$callback_msg),
-  supercomputer_n =  c(toc_OLS_Par$callback_msg, toc_elastic_Par$callback_msg, toc_random_Par$callback_msg, toc_XGB_Par$callback_msg) 
+  supercomputer = c(olstoc$callback_msg, en_toc$callback_msg, rf_toc$callback_msg, xgb_toc$callback_msg),
+  supercomputer_n =  c(olstoc_p$callback_msg, en_toc_p$callback_msg, rf_toc_p$callback_msg, xgb_toc_p$callback_msg) 
 )
 
 colnames(`Table 4`) <- c("supercomputer", "supercomputer_#")
 
-write.csv(`Table 3`, "/out/table3.csv")
-write.csv(`Table 4`, "/out/table4.csv")
+write.csv(`Table 3`, "../out/table3.csv")
+write.csv(`Table 4`, "../out/table4.csv")
 
-#Answers
+#Answers:
+#unfortunately I did not have the mental capacity nor ability to finish this cluster.R so i leave it as is with the information i was able to complete.
+#Q1: For this answer, based on speculation and exploring online, i assume that the xgb model would benefit more because it is a more complex model 
+#Q2: I speculate that the relationship between time and number of cores used highlights that with more cores used in processing, the computation time will decrease, but also in acknowledging there could be less returns because of it
+#Q3: I would probably recommend the supercomputer because its fast and works with multiple models, most likely with more ease and less time
